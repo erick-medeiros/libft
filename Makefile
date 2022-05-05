@@ -8,11 +8,7 @@ INC_FLAG	= -I ./include/
 
 SRC_DIR		= ./src/
 
-SRC 		= $(SRC_DIR)ft_isalpha.c
-SRC 		+= $(SRC_DIR)ft_isdigit.c 
-SRC 		+= $(SRC_DIR)ft_isalnum.c
-SRC 		+= $(SRC_DIR)ft_isascii.c
-SRC 		+= $(SRC_DIR)ft_isprint.c
+SRC 		= $(SRC_DIR)ft_grp_is.c
 SRC 		+= $(SRC_DIR)ft_toupper.c
 SRC 		+= $(SRC_DIR)ft_tolower.c
 SRC 		+= $(SRC_DIR)ft_strlen.c
@@ -52,7 +48,7 @@ SRC 		+= $(SRC_DIR)ft_lstclear.c
 SRC 		+= $(SRC_DIR)ft_lstiter.c
 SRC 		+= $(SRC_DIR)ft_lstmap.c
 
-OBJ		= $(SRC:.c=.o)
+OBJ			= $(SRC:.c=.o)
 COLOR_WHITE	= \e[00m
 COLOR_GREEN	= \e[32m
 COLOR_RED	= \e[91m
