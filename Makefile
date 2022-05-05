@@ -1,18 +1,57 @@
-NAME 	= libft.a
-CFLAGS 	= -Wall -Wextra -Werror
-CC 		= cc
-LIB 	= ar -rcs
-RM		= rm -fr
-INC 	= libft.h
-SRC 	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-			ft_toupper.c ft_tolower.c ft_strlen.c ft_memset.c ft_memcpy.c \
-			ft_memmove.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
-			ft_memcmp.c ft_strnstr.c ft_strdup.c ft_bzero.c ft_strlcpy.c \
-			ft_strlcat.c ft_atoi.c ft_calloc.c ft_substr.c ft_strjoin.c \
-			ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+NAME 		= libft.a
+CFLAGS 		= -Wall -Wextra -Werror
+CC 			= cc
+LIB 		= ar -rcs
+RM			= rm -fr
+INC 		= ./include/libft.h
+INC_FLAG	= -I ./include/
+
+SRC_DIR		= ./src/
+
+SRC 		= $(SRC_DIR)ft_isalpha.c
+SRC 		+= $(SRC_DIR)ft_isdigit.c 
+SRC 		+= $(SRC_DIR)ft_isalnum.c
+SRC 		+= $(SRC_DIR)ft_isascii.c
+SRC 		+= $(SRC_DIR)ft_isprint.c
+SRC 		+= $(SRC_DIR)ft_toupper.c
+SRC 		+= $(SRC_DIR)ft_tolower.c
+SRC 		+= $(SRC_DIR)ft_strlen.c
+SRC 		+= $(SRC_DIR)ft_memset.c
+SRC 		+= $(SRC_DIR)ft_memcpy.c
+SRC 		+= $(SRC_DIR)ft_memmove.c
+SRC 		+= $(SRC_DIR)ft_strchr.c
+SRC 		+= $(SRC_DIR)ft_strrchr.c
+SRC 		+= $(SRC_DIR)ft_strncmp.c
+SRC 		+= $(SRC_DIR)ft_memchr.c
+SRC 		+= $(SRC_DIR)ft_memcmp.c
+SRC 		+= $(SRC_DIR)ft_strnstr.c
+SRC 		+= $(SRC_DIR)ft_strdup.c
+SRC 		+= $(SRC_DIR)ft_bzero.c
+SRC 		+= $(SRC_DIR)ft_strlcpy.c
+SRC 		+= $(SRC_DIR)ft_strlcat.c
+SRC 		+= $(SRC_DIR)ft_atoi.c
+SRC 		+= $(SRC_DIR)ft_calloc.c
+SRC 		+= $(SRC_DIR)ft_substr.c
+SRC 		+= $(SRC_DIR)ft_strjoin.c
+SRC 		+= $(SRC_DIR)ft_strtrim.c
+SRC 		+= $(SRC_DIR)ft_split.c
+SRC 		+= $(SRC_DIR)ft_itoa.c
+SRC 		+= $(SRC_DIR)ft_strmapi.c
+SRC 		+= $(SRC_DIR)ft_striteri.c
+SRC 		+= $(SRC_DIR)ft_putchar_fd.c
+SRC 		+= $(SRC_DIR)ft_putstr_fd.c
+SRC 		+= $(SRC_DIR)ft_putendl_fd.c
+SRC 		+= $(SRC_DIR)ft_putnbr_fd.c
+SRC 		+= $(SRC_DIR)ft_lstnew.c
+SRC 		+= $(SRC_DIR)ft_lstadd_front.c
+SRC 		+= $(SRC_DIR)ft_lstsize.c
+SRC 		+= $(SRC_DIR)ft_lstlast.c
+SRC 		+= $(SRC_DIR)ft_lstadd_back.c
+SRC 		+= $(SRC_DIR)ft_lstdelone.c
+SRC 		+= $(SRC_DIR)ft_lstclear.c
+SRC 		+= $(SRC_DIR)ft_lstiter.c
+SRC 		+= $(SRC_DIR)ft_lstmap.c
+
 OBJ		= $(SRC:.c=.o)
 COLOR_WHITE	= \e[00m
 COLOR_GREEN	= \e[32m
@@ -22,7 +61,7 @@ all: $(NAME)
 
 %.o: %.c
 	@echo "$(COLOR_GREEN)Compiling $(COLOR_WHITE)$(<:.c=)"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(INC_FLAG) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(INC)
 	@echo "$(COLOR_GREEN)Compiling $(COLOR_WHITE)$(NAME:.a=)"
