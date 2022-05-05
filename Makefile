@@ -9,8 +9,7 @@ INC_FLAG	= -I ./include/
 SRC_DIR		= ./src/
 
 SRC 		= $(SRC_DIR)ft_grp_is.c
-SRC 		+= $(SRC_DIR)ft_toupper.c
-SRC 		+= $(SRC_DIR)ft_tolower.c
+SRC 		+= $(SRC_DIR)ft_grp_to.c
 SRC 		+= $(SRC_DIR)ft_strlen.c
 SRC 		+= $(SRC_DIR)ft_memset.c
 SRC 		+= $(SRC_DIR)ft_memcpy.c
