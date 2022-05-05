@@ -42,6 +42,7 @@ SRC 		+= $(SRC_DIR)ft_lstdelone.c
 SRC 		+= $(SRC_DIR)ft_lstclear.c
 SRC 		+= $(SRC_DIR)ft_lstiter.c
 SRC 		+= $(SRC_DIR)ft_lstmap.c
+SRC 		+= $(SRC_DIR)get_next_line.c
 
 OBJ			= $(SRC:.c=.o)
 COLOR_WHITE	= \e[00m
