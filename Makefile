@@ -22,7 +22,6 @@ SRC 		+= $(SRC_DIR)ft_memchr.c
 SRC 		+= $(SRC_DIR)ft_memcmp.c
 SRC 		+= $(SRC_DIR)ft_strnstr.c
 SRC 		+= $(SRC_DIR)ft_strdup.c
-SRC 		+= $(SRC_DIR)ft_bzero.c
 SRC 		+= $(SRC_DIR)ft_strlcpy.c
 SRC 		+= $(SRC_DIR)ft_strlcat.c
 SRC 		+= $(SRC_DIR)ft_atoi.c

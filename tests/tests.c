@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:16:09 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/04/14 18:12:23 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/05/05 04:00:14 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,20 +120,6 @@ void	test_ft_memset(char *list)
 	char memset_s2[10];
 	list[0] = FUNC_TEST(strncmp(ft_memset(memset_s1, 'f', 4), memset(memset_s2, 'f', 4), 4) == 0);
 	ft_test("ft_memset", list);
-}
-
-void	test_ft_bzero(char *list)
-{
-	char bzero_buffer1[10];
-	char bzero_buffer2[10];
-	memset(bzero_buffer1, 'a', 10);
-	memset(bzero_buffer2, 'a', 10);
-	ft_bzero(bzero_buffer1, 4);
-	bzero(bzero_buffer2, 4);
-	list[0] = FUNC_TEST(strncmp(bzero_buffer1, bzero_buffer1, 10)  == 0);
-	list[1] = FUNC_TEST(bzero_buffer1[1] == '\0' && bzero_buffer2[1] == '\0');
-	list[2] = FUNC_TEST(bzero_buffer1[5] == 'a' && bzero_buffer2[5] == 'a');
-	ft_test("ft_bzero", list);
 }
 
 void	test_ft_memcpy(char *list)
@@ -553,7 +539,6 @@ int	main(void)
 	test_ft_isprint(clearlist(list));
 	test_ft_strlen(clearlist(list));
 	test_ft_memset(clearlist(list));
-	test_ft_bzero(clearlist(list));
 	test_ft_memcpy(clearlist(list));
 	test_ft_memmove(clearlist(list));
 	test_ft_strlcpy(clearlist(list));
