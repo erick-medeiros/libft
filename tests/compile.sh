@@ -1,0 +1,1 @@
+gcc -g -I ../ ../libft.h ../ft_*.c tests.c -lbsd -o run_test.out
