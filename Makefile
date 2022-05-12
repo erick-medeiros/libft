@@ -41,6 +41,7 @@ SRC_FILES	+= ft_lstclear.c
 SRC_FILES	+= ft_lstiter.c
 SRC_FILES	+= ft_lstmap.c
 SRC_FILES	+= ft_ulltoa_base.c
+SRC_FILES	+= ft_uitoa_base.c
 SRC_FILES	+= get_next_line.c
 
 SRC_DIR		= ./src/
