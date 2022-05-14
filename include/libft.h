@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/14 15:30:13 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/05/14 15:39:19 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ char	*ft_itoa(int n);
 
 char	*ft_ulltoa_base(unsigned long long nbr, char *base);
 char	*ft_uitoa_base(unsigned int nbr, char *base);
+void	ft_strupd(char **str, char *newstr);
 
 #endif

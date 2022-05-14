@@ -30,6 +30,7 @@ SRC_FILES	+= ft_itoa.c
 SRC_FILES	+= ft_ulltoa_base.c
 SRC_FILES	+= ft_uitoa_base.c
 SRC_FILES	+= get_next_line.c
+SRC_FILES	+= ft_strupd.c
 
 SRC_DIR		= ./src/
 OBJ_DIR		= ./obj/
