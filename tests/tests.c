@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:16:09 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/12 15:27:37 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/05/14 15:30:42 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -350,13 +350,6 @@ void	test_ft_strjoin(char *list)
 	ft_test("ft_strjoin", list);
 }
 
-
-void	test_ft_strtrim(char *list)
-{
-	list[0] = FUNC_TEST(strcmp(ft_strtrim("   xxx   xxx", " x"), "") == 0);
-	ft_test("ft_strtrim", list);
-}
-
 void	test_ft_split(char *list)
 {
 	char **tab = ft_split("4 2", ' ');
@@ -370,161 +363,6 @@ void	test_ft_itoa(char *list)
 	list[0] = FUNC_TEST(strcmp(ft_itoa(2147483647), "2147483647") == 0);
 	list[1] = FUNC_TEST(strcmp(ft_itoa(-2147483648), "-2147483648") == 0);
 	ft_test("ft_itoa", list);
-}
-
-char strmapiTestF(unsigned int i, char c) {return (i + c);}
-
-void	test_ft_strmapi(char *list)
-{
-	list[0] = FUNC_TEST(strcmp(ft_strmapi("1111", strmapiTestF), "1234") == 0);
-	ft_test("ft_strmapi", list);
-}
-
-void striteriTestF(unsigned int i, char * s) {*s += i;}
-
-void	test_ft_striteri(char *list)
-{
-	char s[] = "0000000000";
-	ft_striteri(s, striteriTestF);
-	list[0] = FUNC_TEST(strcmp(s, "0123456789") == 0);
-	ft_test("ft_striteri", list);
-}
-
-void	test_ft_putchar_fd(char *list)
-{
-	char s[] = "ft_putchar_fd OK";
-	int i = -1;
-	while (s[++i])
-		ft_putchar_fd(s[i], 1);
-	ft_putchar_fd('\n', 1);
-}
-
-void	test_ft_putstr_fd(char *list)
-{
-	char s[] = "ft_putstr_fd OK";
-	ft_putstr_fd(s, 1);
-	ft_putstr_fd("\n", 1);
-}
-
-void	test_ft_putendl_fd(char *list)
-{
-	char s[] = "ft_putendl_fd OK";
-	ft_putendl_fd(s, 1);
-}
-
-void	test_ft_putnbr_fd(char *list)
-{
-	ft_putendl_fd("ft_putnbr_fd OK", 1);
-	ft_putnbr_fd(2147483647, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-2147483648, 1);
-	ft_putchar_fd('\n', 1);
-}
-
-void	test_ft_lstnew(char *list)
-{
-	t_list *lst =  ft_lstnew((void*)42);
-
-	list[0] = FUNC_TEST(lst->content == (void*)42);
-	list[1] = FUNC_TEST(lst->next == 0);
-	ft_test("ft_lstnew", list);
-}
-
-void	test_ft_lstadd_front(char *list)
-{
-	t_list * l =  NULL;
-	ft_lstadd_front(&l, ft_lstnew((void*)2));
-	list[0] = FUNC_TEST(l->content == (void*)2);
-	list[1] = FUNC_TEST(l->next == 0);
-
-	ft_lstadd_front(&l, ft_lstnew((void*)4));
-	list[2] = FUNC_TEST(l->content == (void*)4);
-	list[3] = FUNC_TEST(l->next->content == (void*)2);
-	list[4] = FUNC_TEST(l->next->next == 0);
-
-	ft_test("ft_lstadd_front", list);
-}
-
-void	test_ft_lstsize(char *list)
-{
-	t_list * l =  NULL;
-	ft_lstadd_front(&l, ft_lstnew((void*)2));
-	ft_lstadd_front(&l, ft_lstnew((void*)4));
-	list[0] = FUNC_TEST(ft_lstsize(l) == 2);
-	ft_test("ft_lstsize", list);
-}
-
-void	test_ft_lstlast(char *list)
-{
-	t_list * l =  NULL;
-	ft_lstadd_back(&l, ft_lstnew((void*)4));
-	list[0] = FUNC_TEST(ft_lstlast(l)->content == (void*)4);
-	ft_test("ft_lstlast", list);
-}
-
-void	test_ft_lstadd_back(char *list)
-{
-	t_list * l =  NULL;
-
-	ft_lstadd_back(&l, ft_lstnew((void*)4));
-	list[0] = FUNC_TEST(l->content == (void*)4);
-	list[1] = FUNC_TEST(l->next == 0);
-	ft_lstadd_back(&l, ft_lstnew((void*)2));
-	list[2] = FUNC_TEST(l->content == (void*)4);
-	list[3] = FUNC_TEST(l->next->content == (void*)2);
-	list[4] = FUNC_TEST(l->next->next == 0);
-	ft_test("ft_lstadd_back", list);
-}
-
-void	lstdeloneTestF(void *content){}
-
-void	test_ft_lstdelone(char *list)
-{
-	t_list * node0 = ft_lstnew((void *)"0");
-	t_list * node1 = ft_lstnew((void *)"1");
-	t_list * node2 = ft_lstnew((void *)"2");
-	ft_lstadd_back(&node0, node1);
-	ft_lstadd_back(&node0, node2);
-	ft_lstdelone(node1, &lstdeloneTestF);
-	ft_test("ft_lstdelone", list);
-}
-
-void	test_ft_lstclear(char *list)
-{
-	t_list * l =  ft_lstnew((void*)"42");
-	ft_lstadd_back(&l, ft_lstnew((void*)"42"));
-	ft_lstclear(&l, lstdeloneTestF);
-	list[0] = FUNC_TEST(l == 0);
-	ft_test("ft_lstclear", list);
-}
-
-void lstiterTestF(void * content) {
-	char	list[MAX_TESTS];
-	clearlist(list);
-	list[0] = FUNC_TEST(strcmp((char *)content, "42") == 0);
-	ft_test("ft_lstiter", list);
-}
-
-void	test_ft_lstiter(char *list)
-{
-	t_list * l =  ft_lstnew((void *)"42");
-	ft_lstiter(l, lstiterTestF);
-}
-
-void *lstmapTestF(void * p) {
-	char *r = strdup((char *) p);
-	r[0] += 1;
-	return ((void *)r);
-}
-
-void	test_ft_lstmap(char *list)
-{
-	t_list * l =  ft_lstnew((void *)"4");
-	ft_lstadd_back(&l, ft_lstnew((void *)"2"));
-	t_list * m = ft_lstmap(l, lstmapTestF, free);
-	list[0] = FUNC_TEST(strcmp((char *)m->content, "5") == 0);
-	list[1] = FUNC_TEST(strcmp((char *)m->next->content, "3") == 0);
-	ft_test("ft_lstmap", list);
 }
 
 void	test_ft_ulltoa_base(char *list)
@@ -579,25 +417,8 @@ int	main(void)
 	//Part 2
 	test_ft_substr(clearlist(list));
 	test_ft_strjoin(clearlist(list));
-	test_ft_strtrim(clearlist(list));
 	test_ft_split(clearlist(list));
 	test_ft_itoa(clearlist(list));
-	test_ft_strmapi(clearlist(list));
-	test_ft_striteri(clearlist(list));
-	test_ft_putchar_fd(clearlist(list));
-	test_ft_putstr_fd(clearlist(list));
-	test_ft_putendl_fd(clearlist(list));
-	test_ft_putnbr_fd(clearlist(list));
-	//Bonus
-	test_ft_lstnew(clearlist(list));
-	test_ft_lstadd_front(clearlist(list));
-	test_ft_lstsize(clearlist(list));
-	test_ft_lstlast(clearlist(list));
-	test_ft_lstadd_back(clearlist(list));
-	test_ft_lstdelone(clearlist(list));
-	test_ft_lstclear(clearlist(list));
-	test_ft_lstiter(clearlist(list));
-	test_ft_lstmap(clearlist(list));
 
 	test_ft_ulltoa_base(clearlist(list));
 	test_ft_uitoa_base(clearlist(list));
