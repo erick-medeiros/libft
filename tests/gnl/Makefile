@@ -13,12 +13,15 @@ OBJ			= $(SRC:.c=.o)
 T_SRC	= utils.c main.c
 T_OBJ	= $(T_SRC:.c=.o)
 
+%.o: %.c
+	@$(CC) $(CFLAGS) $(INC_FLAG) -c $< -o $@
+
 obj/%.o: src/%.c
-	$(CC) $(CFLAGS) $(INC_FLAG) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INC_FLAG) -c $< -o $@
 
 all: $(T_OBJ)
 	@make -C $(PATH_ROOT)
-	$(CC) $(CFLAGS) $(INC_FLAG) -o $(NAME) $(T_OBJ) $(PATH_ROOT)obj/*.o
+	@$(CC) $(CFLAGS) $(INC_FLAG) -o $(NAME) $(T_OBJ) $(PATH_ROOT)obj/*.o
 
 clean:
 	@$(RM) $(OBJ) $(OBJ_B) $(T_OBJ)
