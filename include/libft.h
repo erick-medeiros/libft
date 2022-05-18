@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/14 16:08:03 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/05/18 22:48:42 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char	*big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
 
-// #include <strings.h>
-void	ft_bzero(void *s, size_t n);
-
 // #include <bsd/string.h>
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -67,6 +64,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 
+// Extras
 char	*ft_ulltoa_base(unsigned long long nbr, char *base);
 char	*ft_uitoa_base(unsigned int nbr, char *base);
 void	ft_strupd(char **str, char *newstr);

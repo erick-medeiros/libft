@@ -1,9 +1,10 @@
-NAME 		= libft.a
-CFLAGS 		= -Wall -Wextra -Werror
-CC 			= cc
-LIB 		= ar -rcs
-RM			= rm -fr
-INC 		= ./include/libft.h
+NAME 			= libft.a
+CFLAGS 		= -Wall -Wextra -Werror -g
+CC 				= cc
+LIB 			= ar -rcs
+RM				= rm -fr
+
+INC 			= ./include/libft.h
 INC_FLAG	= -I ./include/
 
 SRC_FILES	= ft_grp_is.c
@@ -34,12 +35,12 @@ SRC_FILES	+= ft_strupd.c
 
 SRC_DIR		= ./src/
 OBJ_DIR		= ./obj/
-SRC			= $(foreach i, $(SRC_FILES), $(SRC_DIR)$(i))
-OBJ			= $(foreach i, $(SRC_FILES), $(OBJ_DIR)$(i:.c=.o))
+SRC				= $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ				= $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 
 COLOR_WHITE	= \e[00m
 COLOR_GREEN	= \e[32m
-COLOR_RED	= \e[91m
+COLOR_RED		= \e[91m
 
 all: $(OBJ_DIR) $(NAME)
 
@@ -53,6 +54,7 @@ obj/%.o: src/%.c
 $(NAME): $(OBJ) $(INC)
 	@echo "$(COLOR_GREEN)Compiling $(COLOR_WHITE)$(NAME:.a=)"
 	@$(LIB) $(NAME) $(INC) $(OBJ)
+	@echo "$(COLOR_GREEN)Compiled Successfully$(COLOR_WHITE) > $(NAME)"
 
 clean:
 	@echo "$(COLOR_RED)Removing $(COLOR_WHITE)all objects"
