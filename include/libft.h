@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/18 22:48:42 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:54:55 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+	char			*content;
+	int				fd;
+	struct s_list	*next;
+}	t_list;
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
 # endif
 
 char	*get_next_line(int fd);
