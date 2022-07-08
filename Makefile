@@ -1,5 +1,5 @@
 NAME 			= libft.a
-INC 			= include/libft.h
+
 INC_PATH	= include/
 SRC_PATH	= src/
 OBJ_PATH	= obj/
@@ -30,6 +30,17 @@ FILES			+= ft_uitoa_base.c
 FILES			+= get_next_line.c
 FILES			+= ft_strupd.c
 
+FILES			+= ft_printf/ft_printf.c
+FILES			+= ft_printf/ft_initialize.c
+FILES			+= ft_printf/ft_placeholder.c
+FILES			+= ft_printf/ft_specifier_c.c
+FILES			+= ft_printf/ft_specifier_s.c
+FILES			+= ft_printf/ft_specifier_p.c
+FILES			+= ft_printf/ft_specifier_d_i.c
+FILES			+= ft_printf/ft_specifier_ui.c
+FILES			+= ft_printf/ft_specifier_pct.c
+FILES			+= ft_printf/ft_subspecs.c
+
 SRC				= $(addprefix $(SRC_PATH), $(FILES))
 OBJ				= $(addprefix $(OBJ_PATH), $(FILES:.c=.o))
 
@@ -47,14 +58,15 @@ all: $(OBJ_PATH) $(NAME)
 $(OBJ_PATH):
 	@echo "$(C_G)Create dir$(C_W) $@"
 	mkdir -p $@
+	mkdir -p $@/ft_printf
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@echo "$(C_G)Compiling $(C_W)$(<:.c=)"
+	@echo -n "$(C_G)obj: $(C_W)"
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	@echo "$(C_G)Compiling $(C_W)$(NAME:.a=)"
-	$(LIB) $(NAME) $(INC) $(OBJ)
+	$(LIB) $(NAME) $(OBJ)
 	@echo "$(C_G)Compiled $(C_W)~ $(NAME)"
 
 clean:
