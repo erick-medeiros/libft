@@ -3,6 +3,7 @@ NAME 			= libft.a
 INC_PATH	= include/
 SRC_PATH	= src/
 OBJ_PATH	= obj/
+OBJ_DIRS	= obj/ obj/ft_printf/
 
 FILES			= ft_grp_is.c
 FILES			+= ft_grp_to.c
@@ -53,18 +54,17 @@ C_W				= \e[00m
 C_G				= \e[32m
 C_R				= \e[91m
 
-all: $(OBJ_PATH) $(NAME)
+all: $(NAME)
 
-$(OBJ_PATH):
+$(OBJ_DIRS):
 	@echo "$(C_G)Create dir$(C_W) $@"
 	mkdir -p $@
-	mkdir -p $@/ft_printf
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@echo -n "$(C_G)obj: $(C_W)"
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIRS) $(OBJ)
 	@echo "$(C_G)Compiling $(C_W)$(NAME:.a=)"
 	$(LIB) $(NAME) $(OBJ)
 	@echo "$(C_G)Compiled $(C_W)~ $(NAME)"
