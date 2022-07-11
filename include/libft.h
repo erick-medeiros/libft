@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/11 22:47:26 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:47:39 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,5 +127,7 @@ size_t		ft_split_count(char const *s, char c);
 int			ft_isspace(int c);
 int			ft_validate_base(char *base);
 int			ft_atoi_base(char *str, char *base);
+void		ft_toupper_str(char **str);
+void		ft_tolower_str(char **str);
 
 #endif

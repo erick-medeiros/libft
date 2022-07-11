@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:16:09 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/11 22:48:56 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:49:41 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -398,6 +398,34 @@ void	test_ft_atoi_base(char *list)
 	ft_test("ft_atoi_base", list);
 }
 
+void	test_ft_toupper_str(char *list)
+{
+	char *str;
+
+	str = ft_strdup("abcdef");
+	ft_toupper_str(&str);
+	list[0] = FUNC_TEST(strcmp(str, "ABCDEF") == 0);
+	free(str);
+	str = NULL;
+	ft_toupper_str(&str);
+	list[1] = FUNC_TEST(str == NULL);
+	ft_test("ft_toupper_str", list);
+}
+
+void	test_ft_tolower_str(char *list)
+{
+	char *str;
+
+	str = ft_strdup("ABCDEF");
+	ft_tolower_str(&str);
+	list[0] = FUNC_TEST(strcmp(str, "abcdef") == 0);
+	free(str);
+	str = NULL;
+	ft_tolower_str(&str);
+	list[1] = FUNC_TEST(str == NULL);
+	ft_test("ft_tolower_str", list);
+}
+
 int	main(void)
 {	
 	char	list[MAX_TESTS];
@@ -434,5 +462,7 @@ int	main(void)
 	test_ft_ulltoa_base(clearlist(list));
 	test_ft_uitoa_base(clearlist(list));
 	test_ft_atoi_base(clearlist(list));
+	test_ft_toupper_str(clearlist(list));
+	test_ft_tolower_str(clearlist(list));
 	return (0);
 }
