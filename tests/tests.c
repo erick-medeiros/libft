@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:16:09 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/14 15:30:42 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:48:56 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -387,6 +387,17 @@ void	test_ft_uitoa_base(char *list)
 	ft_test("ft_uitoa_base", list);
 }
 
+void	test_ft_atoi_base(char *list)
+{
+	int nbr;
+	char *str;
+
+	str = "0xff";
+	nbr = ft_atoi_base(str, "0123456789abcdef");
+	list[0] = FUNC_TEST(nbr == 255);
+	ft_test("ft_atoi_base", list);
+}
+
 int	main(void)
 {	
 	char	list[MAX_TESTS];
@@ -422,5 +433,6 @@ int	main(void)
 
 	test_ft_ulltoa_base(clearlist(list));
 	test_ft_uitoa_base(clearlist(list));
+	test_ft_atoi_base(clearlist(list));
 	return (0);
 }

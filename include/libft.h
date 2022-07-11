@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/09 20:18:05 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/11 22:47:26 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,8 @@ char		*ft_ulltoa_base(unsigned long long nbr, char *base);
 char		*ft_uitoa_base(unsigned int nbr, char *base);
 void		ft_strupd(char **str, char *newstr);
 size_t		ft_split_count(char const *s, char c);
+int			ft_isspace(int c);
+int			ft_validate_base(char *base);
+int			ft_atoi_base(char *str, char *base);
 
 #endif

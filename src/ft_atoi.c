@@ -6,13 +6,13 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 20:09:12 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/04/12 15:21:36 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/11 16:54:38 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\f' || c == '\n')
 		return (1);
