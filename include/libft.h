@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/11 22:47:39 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/29 23:50:54 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@
 
 typedef struct s_format
 {
-	const char	*format;
-	va_list		ap;
-	size_t		i;
-	size_t		length;
+	const char		*format;
+	va_list			ap;
+	size_t			i;
+	size_t			length;
+	unsigned char	fill_str;
+	char			*str;
+	size_t			str_i;
+	size_t			size_str;
 }	t_format;
 
 typedef struct s_holder
@@ -44,6 +48,8 @@ typedef struct s_holder
 
 int			ft_printf(const char *format, ...);
 int			ft_vprintf(const char *format, va_list ap);
+int			ft_sprintf(char *str, size_t size,	const char *format, ...);
+int			ft_writestr(t_format *fmt, int fd, const void *buf, size_t count);
 
 t_format	*ft_initialize_format(const char *format, va_list ap);
 t_holder	*ft_initialize_holder(void);

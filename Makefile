@@ -42,11 +42,13 @@ FILES			+= ft_printf/ft_specifier_d_i.c
 FILES			+= ft_printf/ft_specifier_ui.c
 FILES			+= ft_printf/ft_specifier_pct.c
 FILES			+= ft_printf/ft_subspecs.c
+FILES			+= ft_printf/ft_sprintf.c
 
 SRC				= $(addprefix $(SRC_PATH), $(FILES))
 OBJ				= $(addprefix $(OBJ_PATH), $(FILES:.c=.o))
 
-CFLAGS 		= -Wall -Wextra -Werror -g -I $(INC_PATH)
+# CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS		+= -g -I $(INC_PATH)
 CC 				= cc
 LIB 			= ar -rcs
 RM				= rm -fr
@@ -81,6 +83,7 @@ fclean: clean
 re: fclean all
 
 norm:
+	@clear
 	@norminette $(INC_PATH) $(SRC_PATH) | grep Error || true
 
 .PHONY: all clean fclean re norm

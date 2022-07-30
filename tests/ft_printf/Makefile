@@ -1,20 +1,20 @@
 NAME			= run_test
-INC_DIR		= ../include/
-INC_SRC		= ../src/
+INC_DIR		= ../../include/
+INC_SRC		= ../../src/
 
-PATH_LIB	= ../
+PATH_LIB	= ../../
 PATH_EXT	= ./extracted/
 PATH_INC	= ./include/
 PATH_SRC	= ./src/
 PATH_OBJ	= ./obj/
 PATH_LOG	= ./log/
 
-LIB				= $(PATH_LIB)libftprintf.a
+LIB				= $(PATH_LIB)libft.a
 
 MKDIR			= mkdir -p
 RM				= rm -fr
 CC				= cc
-INC_FLAG	= -I $(PATH_INC) -I $(PATH_EXT) -g
+INC_FLAG	= -I $(PATH_INC) -I $(PATH_EXT) -I $(PATH_LIB)include/ -g
 CFLAGS		= -no-pie -g
 
 FILE_PROG	= main

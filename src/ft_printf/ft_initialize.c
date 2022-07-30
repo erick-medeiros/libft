@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:26:51 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/08 23:33:34 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/29 23:42:41 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ t_format	*ft_initialize_format(const char *format, va_list ap)
 	va_copy(fmt->ap, ap);
 	fmt->i = 0;
 	fmt->length = 0;
+	fmt->fill_str = 0;
+	fmt->str_i = 0;
+	fmt->size_str = 0;
+	fmt->str = NULL;
 	return (fmt);
 }
 

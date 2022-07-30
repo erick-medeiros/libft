@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 00:25:20 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/08 23:33:34 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/07/29 23:52:09 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_specifier_p(t_format *fmt, t_holder *hdr)
 		if (hdr->flag_zero && ull > 0)
 			s[1] = 'x';
 	}
-	fmt->length += write(1, s, hdr->length);
+	fmt->length += ft_writestr(fmt, 1, s, hdr->length);
 	fmt->i++;
 	free(s);
 }
