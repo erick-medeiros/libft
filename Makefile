@@ -47,7 +47,7 @@ FILES			+= ft_printf/ft_sprintf.c
 SRC				= $(addprefix $(SRC_PATH), $(FILES))
 OBJ				= $(addprefix $(OBJ_PATH), $(FILES:.c=.o))
 
-# CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror
 CFLAGS		+= -g -I $(INC_PATH)
 CC 				= cc
 LIB 			= ar -rcs
