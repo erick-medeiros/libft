@@ -3,7 +3,7 @@ NAME 			= libft.a
 INC_PATH	= include/
 SRC_PATH	= src/
 OBJ_PATH	= obj/
-OBJ_DIRS	= obj/ obj/ft_printf/
+OBJ_DIRS	= obj/ obj/ft_printf/ obj/math/
 
 FILES			= ft_grp_is.c
 FILES			+= ft_grp_to.c
@@ -43,6 +43,10 @@ FILES			+= ft_printf/ft_specifier_ui.c
 FILES			+= ft_printf/ft_specifier_pct.c
 FILES			+= ft_printf/ft_subspecs.c
 FILES			+= ft_printf/ft_sprintf.c
+
+FILES			+= math/ft_abs.c
+FILES			+= math/ft_max.c
+FILES			+= math/ft_min.c
 
 SRC				= $(addprefix $(SRC_PATH), $(FILES))
 OBJ				= $(addprefix $(OBJ_PATH), $(FILES:.c=.o))
