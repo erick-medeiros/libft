@@ -6,12 +6,14 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/09 12:00:53 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/09 12:27:13 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+#include <stddef.h>
 
 int			ft_printf(const char *format, ...);
 int			ft_sprintf(char *str, size_t size,	const char *format, ...);
