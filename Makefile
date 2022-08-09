@@ -88,6 +88,6 @@ re: fclean all
 
 norm:
 	@clear
-	@norminette $(INC_PATH) $(SRC_PATH) | grep Error || true
+	@norminette | grep Error || true
 
 .PHONY: all clean fclean re norm
