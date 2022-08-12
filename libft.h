@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/09 12:38:43 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/12 18:36:06 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,8 @@ double		ft_maxd(double number1, double number2);
 int			ft_min(int number1, int number2);
 float		ft_minf(float number1, float number2);
 double		ft_mind(double number1, double number2);
+
+size_t		ft_split_cmd_count(char const *s, char c);
+char		**ft_split_cmd(char const *s, char c);
 
 #endif

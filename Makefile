@@ -25,6 +25,7 @@ FILES			+= ft_calloc.c
 FILES			+= ft_substr.c
 FILES			+= ft_strjoin.c
 FILES			+= ft_split.c
+FILES			+= ft_split_cmd.c
 FILES			+= ft_itoa.c
 FILES			+= ft_ulltoa_base.c
 FILES			+= ft_uitoa_base.c
