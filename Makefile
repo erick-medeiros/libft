@@ -32,6 +32,7 @@ FILES			+= ft_uitoa_base.c
 FILES			+= get_next_line.c
 FILES			+= ft_strupd.c
 FILES			+= ft_atoi_base.c
+FILES			+= free.c
 
 FILES			+= ft_printf/ft_printf.c
 FILES			+= ft_printf/ft_initialize.c

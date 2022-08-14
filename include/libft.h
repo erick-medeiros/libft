@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/09 11:55:02 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 00:36:39 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,7 @@ double		ft_maxd(double number1, double number2);
 int			ft_min(int number1, int number2);
 float		ft_minf(float number1, float number2);
 double		ft_mind(double number1, double number2);
+
+void		ft_free_list(void **list);
 
 #endif

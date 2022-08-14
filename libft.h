@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/12 18:36:06 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 00:36:22 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,7 @@ double		ft_mind(double number1, double number2);
 
 size_t		ft_split_cmd_count(char const *s, char c);
 char		**ft_split_cmd(char const *s, char c);
+
+void		ft_free_list(void **list);
 
 #endif
