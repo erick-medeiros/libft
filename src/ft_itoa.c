@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 04:46:35 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/04/13 06:55:37 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/15 11:03:22 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,44 @@ char	*ft_itoa(int n)
 		s[i] = '-';
 	}
 	return (ft_strdup(&s[i]));
+}
+
+char	*ft_uitoa_base(unsigned int nbr, char *base)
+{
+	size_t	index;
+	size_t	len_base;
+	char	s[11];
+
+	if (base == NULL)
+		return (NULL);
+	len_base = ft_strlen(base);
+	index = 10;
+	s[index] = '\0';
+	while (nbr != 0 || index == 10)
+	{
+		index--;
+		s[index] = base[nbr % len_base];
+		nbr = nbr / len_base;
+	}
+	return (ft_strdup(&s[index]));
+}
+
+char	*ft_ulltoa_base(unsigned long long nbr, char *base)
+{
+	size_t	index;
+	size_t	len_base;
+	char	s[21];
+
+	if (base == NULL)
+		return (NULL);
+	len_base = ft_strlen(base);
+	index = 20;
+	s[index] = '\0';
+	while (nbr != 0 || index == 20)
+	{
+		index--;
+		s[index] = base[nbr % len_base];
+		nbr = nbr / len_base;
+	}
+	return (ft_strdup(&s[index]));
 }
