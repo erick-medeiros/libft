@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_initialize.c                                    :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:26:51 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/29 23:42:41 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 22:36:11 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "./ft_printf.h"
 
 t_format	*ft_initialize_format(const char *format, va_list ap)
 {
@@ -48,4 +49,35 @@ t_holder	*ft_initialize_holder(void)
 	hdr->precision = 0;
 	hdr->length = 0;
 	return (hdr);
+}
+
+void	ft_specifier_pct(t_format *fmt)
+{
+	char	c;
+
+	c = '%';
+	fmt->length += ft_writestr(fmt, 1, &c, 1);
+	fmt->i++;
+}
+
+int	ft_writestr(t_format *fmt, int fd, const void *buf, size_t count)
+{
+	size_t	length;
+	size_t	i;
+
+	if (fmt->fill_str == 1)
+	{
+		i = 0;
+		while (i < count && fmt->str_i < fmt->size_str)
+		{
+			fmt->str[fmt->str_i] = ((char *)buf)[i];
+			++i;
+			++fmt->str_i;
+		}
+		fmt->str[fmt->str_i] = '\0';
+		length = i;
+	}
+	else
+		length = write(fd, buf, count);
+	return (length);
 }

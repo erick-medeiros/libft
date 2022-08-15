@@ -6,11 +6,12 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:29:34 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/08 23:33:34 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 22:24:08 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "./ft_printf.h"
 
 static char	*ft_subspec_buffer(t_holder *hdr)
 {

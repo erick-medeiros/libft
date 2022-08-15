@@ -6,11 +6,29 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:29:44 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/08 23:33:34 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 22:36:33 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "./ft_printf.h"
+
+int	ft_while_placeholder(t_format	*fmt)
+{
+	size_t		length;
+
+	if (fmt == NULL)
+		return (0);
+	while (fmt->format[fmt->i] != '\0')
+	{
+		if (fmt->format[fmt->i] == '%')
+			ft_placeholder(fmt);
+		else
+			fmt->length += ft_writestr(fmt, 1, &fmt->format[fmt->i++], 1);
+	}
+	length = fmt->length;
+	return (length);
+}
 
 void	ft_placeholder(t_format *fmt)
 {

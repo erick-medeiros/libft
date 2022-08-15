@@ -35,16 +35,10 @@ FILES			+= ft_atoi_base.c
 FILES			+= free.c
 
 FILES			+= ft_printf/ft_printf.c
-FILES			+= ft_printf/ft_initialize.c
 FILES			+= ft_printf/ft_placeholder.c
-FILES			+= ft_printf/ft_specifier_c.c
-FILES			+= ft_printf/ft_specifier_s.c
-FILES			+= ft_printf/ft_specifier_p.c
-FILES			+= ft_printf/ft_specifier_d_i.c
-FILES			+= ft_printf/ft_specifier_ui.c
-FILES			+= ft_printf/ft_specifier_pct.c
+FILES			+= ft_printf/ft_specifiers.c
 FILES			+= ft_printf/ft_subspecs.c
-FILES			+= ft_printf/ft_sprintf.c
+FILES			+= ft_printf/ft_utils.c
 
 FILES			+= math/ft_abs.c
 FILES			+= math/ft_max.c
