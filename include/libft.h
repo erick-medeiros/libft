@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 17:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 22:38:37 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 22:45:54 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,7 @@
 int			ft_printf(const char *format, ...);
 int			ft_sprintf(char *str, size_t size,	const char *format, ...);
 
-// start get_next_line
-
-typedef struct s_list
-{
-	char			*content;
-	int				fd;
-	struct s_list	*next;
-}	t_list;
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
-# endif
-
 char		*get_next_line(int fd);
-
-// end get_next_line
 
 // Part 1
 // #include <ctype.h>

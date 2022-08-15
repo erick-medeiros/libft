@@ -6,11 +6,22 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 05:47:35 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/07/08 16:59:12 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 22:46:06 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+typedef struct s_list
+{
+	char			*content;
+	int				fd;
+	struct s_list	*next;
+}	t_list;
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1000
+#endif
 
 static char	*get_line(char **acc)
 {
