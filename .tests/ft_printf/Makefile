@@ -1,6 +1,4 @@
 NAME			= run_test
-INC_DIR		= ../../include/
-INC_SRC		= ../../src/
 
 PATH_LIB	= ../../
 PATH_EXT	= ./extracted/
@@ -14,7 +12,7 @@ LIB				= $(PATH_LIB)libft.a
 MKDIR			= mkdir -p
 RM				= rm -fr
 CC				= cc
-INC_FLAG	= -I $(PATH_INC) -I $(PATH_EXT) -I $(PATH_LIB)include/ -g
+INC_FLAG	= -I $(PATH_INC) -I $(PATH_EXT) -I $(PATH_LIB) -g
 CFLAGS		= -no-pie -g
 
 FILE_PROG	= main
@@ -52,9 +50,6 @@ COLOR_RED		= \e[91m
 COLOR_BLUE	= \e[34m
 
 all: create_dir compile_lib compile_prog
-
-norm:
-	@norminette $(INC_DIR)*.h $(INC_SRC)*.c
 
 valg:
 	@valgrind --leak-check=full --show-leak-kinds=all -s ./run_test

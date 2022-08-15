@@ -6,12 +6,15 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 22:22:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 22:33:35 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:07:56 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# include <stdarg.h>
+# include <unistd.h>
 
 typedef struct s_format
 {

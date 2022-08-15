@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 00:36:22 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:01:57 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdlib.h>
 
 int			ft_printf(const char *format, ...);
 int			ft_sprintf(char *str, size_t size,	const char *format, ...);

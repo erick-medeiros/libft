@@ -6,10 +6,11 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 05:47:35 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 22:46:06 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:07:36 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 typedef struct s_list

@@ -1,6 +1,6 @@
 NAME 			= libft.a
 
-INC_PATH	= include/
+INC_PATH	= ./
 SRC_PATH	= src/
 OBJ_PATH	= obj/
 OBJ_DIRS	= obj/ obj/ft_printf/ obj/math/
