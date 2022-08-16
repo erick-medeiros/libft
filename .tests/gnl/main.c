@@ -6,10 +6,11 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 05:38:23 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/05/05 05:27:20 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/16 14:29:22 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "utils.h"
 #include "libft.h"
 

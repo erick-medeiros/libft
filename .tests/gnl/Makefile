@@ -3,7 +3,7 @@ CC 			= cc
 CFLAGS		= -Wall -Wextra -Werror -D BUFFER_SIZE=3 -g
 RM			= rm -fr
 PATH_ROOT	= ../../
-INC_FLAG	= -I $(PATH_ROOT)include/ -I ./
+INC_FLAG	= -I $(PATH_ROOT) -I ./
 SRC_DIR		= $(PATH_ROOT)
 SRC			= $(SRC_DIR)get_next_line.c
 OBJ			= $(SRC:.c=.o)
