@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 22:09:56 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 22:23:58 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/17 20:52:16 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_specifier_d_i(t_format *fmt, t_holder *hdr)
 	d = (int)va_arg(fmt->ap, int);
 	s = ft_itoa(d);
 	if (hdr->flag_minus)
-			hdr->flag_zero = 0;
+		hdr->flag_zero = 0;
 	if (hdr->subspec_precision)
 	{
 		if (hdr->precision == 0 && d == 0)
