@@ -15,7 +15,6 @@ FILES			+= ft_strcmp.c
 FILES			+= ft_strdup.c
 FILES			+= ft_atoi.c
 FILES			+= ft_itoa.c
-FILES			+= ft_calloc.c
 FILES			+= ft_split.c
 FILES			+= ft_split_cmd.c
 FILES			+= get_next_line.c

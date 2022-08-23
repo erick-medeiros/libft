@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 23:21:20 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/14 23:23:49 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:51:55 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t			i;
-	unsigned char	*dest_uc;
-	unsigned char	*src_uc;
-
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	dest_uc = (unsigned char *)dest;
-	src_uc = (unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		dest_uc[i] = src_uc[i];
-		i++;
-	}
-	return (dest);
-}
-
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;
@@ -97,4 +78,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	while (++i < n)
 		suc[i] = c;
 	return (suc);
+}
+
+void	*ft_calloc(size_t nelem, size_t elsize)
+{
+	void	*p;
+
+	p = malloc(nelem * elsize);
+	if (p == NULL)
+		return (NULL);
+	ft_memset(p, '\0', (nelem * elsize));
+	return (p);
 }
