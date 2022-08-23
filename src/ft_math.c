@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_math.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 14:03:47 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/08 14:10:12 by eandre-f         ###   ########.fr       */
+/*   Created: 2022/08/23 11:51:29 by eandre-f          #+#    #+#             */
+/*   Updated: 2022/08/23 11:55:46 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ int	ft_abs(int number)
 		return (number);
 }
 
-float	ft_absf(float number)
+int	ft_max(int number1, int number2)
 {
-	if (number < 0)
-		return (-number);
+	if (number1 > number2)
+		return (number1);
 	else
-		return (number);
+		return (number2);
 }
 
-double	ft_absd(double number)
+int	ft_min(int number1, int number2)
 {
-	if (number < 0)
-		return (-number);
+	if (number1 < number2)
+		return (number1);
 	else
-		return (number);
+		return (number2);
 }
