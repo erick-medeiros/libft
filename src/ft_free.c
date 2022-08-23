@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 00:32:55 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/16 14:26:44 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:57:48 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,15 @@ void	ft_free_list(void ***listptr)
 		free(list);
 		*listptr = NULL;
 	}
+}
+
+// string allocation update
+
+void	ft_strupd(char **str, char *newstr)
+{
+	char	*temp;
+
+	temp = *str;
+	*str = newstr;
+	free(temp);
 }

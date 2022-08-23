@@ -18,7 +18,6 @@ FILES			+= ft_itoa.c
 FILES			+= ft_split.c
 FILES			+= ft_split_cmd.c
 FILES			+= get_next_line.c
-FILES			+= ft_strupd.c
 FILES			+= ft_free.c
 FILES			+= ft_math.c
 
