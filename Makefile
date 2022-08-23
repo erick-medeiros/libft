@@ -10,7 +10,6 @@ FILES			+= ft_grp_to.c
 FILES			+= ft_strlen.c
 FILES			+= ft_mem.c
 FILES			+= ft_strchr.c
-FILES			+= ft_strrchr.c
 FILES			+= ft_strcmp.c
 FILES			+= ft_strnstr.c
 FILES			+= ft_strdup.c

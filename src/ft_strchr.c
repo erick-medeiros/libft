@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 04:25:50 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/04/07 03:58:08 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/23 12:22:37 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,40 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	caract;
-	char	*sc;
+	unsigned char	*us;
+	unsigned char	uc;
+	size_t			i;
 
-	caract = (unsigned char) c;
-	sc = (char *)s;
+	us = (unsigned char *) s;
+	uc = (unsigned char) c;
 	i = 0;
-	while (sc[i] != '\0')
+	while (us[i] != '\0')
 	{
-		if (sc[i] == caract)
-			return (&sc[i]);
+		if (us[i] == uc)
+			return ((char *) &us[i]);
 		i++;
 	}
-	if (caract == '\0')
-		return (&sc[i]);
+	if (uc == '\0')
+		return ((char *) &us[i]);
+	return (NULL);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	unsigned char	*us;
+	unsigned char	uc;
+	int				i;
+
+	us = (unsigned char *) s;
+	uc = (unsigned char) c;
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (us[i] == uc)
+			return ((char *) &us[i]);
+		i--;
+	}
+	if (uc == '\0')
+		return ((char *) &us[i]);
 	return (NULL);
 }
