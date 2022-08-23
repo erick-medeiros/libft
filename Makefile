@@ -5,7 +5,8 @@ SRC_PATH	= src/
 OBJ_PATH	= obj/
 OBJ_DIRS	= obj/ obj/ft_printf/
 
-FILES			= ft_grp_is.c
+FILES			= ft_is.c
+FILES			+= ft_is2.c
 FILES			+= ft_grp_to.c
 FILES			+= ft_strlen.c
 FILES			+= ft_mem.c

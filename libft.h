@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/23 11:54:27 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:08:24 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
+int			ft_isspace(int c);
+int			ft_isquote(int c);
+
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 

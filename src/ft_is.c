@@ -1,50 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_is.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 20:09:12 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/23 13:04:15 by eandre-f         ###   ########.fr       */
+/*   Created: 2022/05/05 03:33:43 by eandre-f          #+#    #+#             */
+/*   Updated: 2022/08/23 13:04:45 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_atoi_error(int sin)
+int	ft_isalpha(int c)
 {
-	if (sin == 1)
-		return (-1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	ft_isalnum(int c)
+{
+	if (ft_isalpha(c) != 0 || ft_isdigit(c) != 0)
+		return (1);
 	else
 		return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_isascii(int c)
 {
-	size_t	i;
-	int		sin;
-	long	val;
-	long	pre;
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}
 
-	i = 0;
-	sin = 1;
-	val = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sin = -1;
-		i++;
-	}
-	while (ft_isdigit(nptr[i]))
-	{
-		pre = val;
-		val = (val * 10) + (nptr[i] - '0');
-		if (val < pre)
-			return (ft_atoi_error(sin));
-		i++;
-	}
-	return (val * sin);
+int	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 15:03:36 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/12 19:23:42 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/23 13:12:28 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 #define SINGLE_QUOTE 39
 #define DOUBLE_QUOTE 34
-
-static int	isquote(char c)
-{
-	if (c == SINGLE_QUOTE || c == DOUBLE_QUOTE)
-		return (1);
-	return (0);
-}
 
 static int	count_word(char const *s, int delimiter)
 {
@@ -54,13 +47,13 @@ size_t	ft_split_cmd_count(char const *s, char c)
 	count = 0;
 	while (*s != '\0')
 	{
-		if (*s != c || *s == SINGLE_QUOTE || *s == DOUBLE_QUOTE)
+		if (*s != c || ft_isquote(*s))
 		{
 			count++;
 			len = cmdlen(s, c);
-			s += isquote(*s);
+			s += ft_isquote(*s);
 			s += len;
-			s += isquote(*s);
+			s += ft_isquote(*s);
 		}
 		else
 			s++;
@@ -82,13 +75,13 @@ char	**ft_split_cmd(char const *s, char c)
 	i = 0;
 	while (*s != '\0')
 	{
-		if (*s != c || isquote(*s))
+		if (*s != c || ft_isquote(*s))
 		{
 			len = cmdlen(s, c);
-			s += isquote(*s);
+			s += ft_isquote(*s);
 			splited[i++] = ft_substr(s, 0, len);
 			s += len;
-			s += isquote(*s);
+			s += ft_isquote(*s);
 		}
 		else
 			s++;
