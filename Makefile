@@ -19,6 +19,7 @@ FILES			+= ft_split_cmd.c
 FILES			+= get_next_line.c
 FILES			+= ft_free.c
 FILES			+= ft_math.c
+FILES			+= ft_put.c
 
 FILES			+= ft_printf/ft_printf.c
 FILES			+= ft_printf/ft_placeholder.c

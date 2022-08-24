@@ -6,7 +6,7 @@
 /*   By: eandre-f <eandre-f@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 11:59:29 by eandre-f          #+#    #+#             */
-/*   Updated: 2022/08/23 13:55:29 by eandre-f         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:25:01 by eandre-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,10 @@ char		**ft_split_cmd(char const *s, char c);
 
 void		ft_free_list(void ***listptr);
 int			ft_strcmp(const char *s1, const char *s2);
+
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
 
 #endif
