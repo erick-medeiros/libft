@@ -53,3 +53,4 @@ dkms.conf
 
 ## bear -- make
 compile_commands.json
+.cache/*
